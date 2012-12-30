@@ -23,9 +23,8 @@ C ++库。 API（目前）是相当复杂的，涉及
 
  - Others. Look in `deps/` for what else is available.
 
-Node statically compiles all its dependencies into the executable. When
-compiling your module, you don't need to worry about linking to any of these
-libraries.
+节点静态编译到可执行文件中的所有的依赖。何时
+编译模块时，您不必担心任何有关链接库。
 
 
 ## Hello world
