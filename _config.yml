@@ -1,2 +1,5 @@
-markdown: rdiscount
+safe: true
+source: v0.8.16/source
+destination: v0.8.16/
+lsi: false
 pygments: true
