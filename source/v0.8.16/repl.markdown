@@ -1,3 +1,7 @@
+---
+title: repl
+---
+
 # REPL
 
 A Read-Eval-Print-Loop (REPL) is available both as a standalone program and

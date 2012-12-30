@@ -1,3 +1,7 @@
+---
+title: tty
+---
+
 # TTY
 
     Stability: 2 - Unstable

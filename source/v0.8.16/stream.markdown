@@ -1,3 +1,7 @@
+---
+title: stream
+---
+
 # Stream
 
     Stability: 2 - Unstable

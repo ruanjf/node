@@ -1,3 +1,7 @@
+---
+title: addons
+---
+
 # Addons
 
 Addons are dynamically linked shared objects. They can provide glue to C and

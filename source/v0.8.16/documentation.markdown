@@ -1,3 +1,7 @@
+---
+title: documentation
+---
+
 # About this Documentation
 
 <!-- type=misc -->

@@ -1,3 +1,7 @@
+---
+title: events
+---
+
 # Events
 
     Stability: 4 - API Frozen

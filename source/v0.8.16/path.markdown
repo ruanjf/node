@@ -1,3 +1,7 @@
+---
+title: path
+---
+
 # Path
 
     Stability: 3 - Stable

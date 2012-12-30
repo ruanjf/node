@@ -1,3 +1,7 @@
+---
+title: debugger
+---
+
 # Debugger
 
     Stability: 3 - Stable

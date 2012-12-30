@@ -1,3 +1,7 @@
+---
+title: all
+---
+
 @include documentation
 @include synopsis
 @include globals

@@ -1,3 +1,7 @@
+---
+title: dns
+---
+
 # DNS
 
     Stability: 3 - Stable
