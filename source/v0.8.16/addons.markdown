@@ -4,9 +4,9 @@ title: addons
 
 # Addons
 
-Addons are dynamically linked shared objects. They can provide glue to C and
-C++ libraries. The API (at the moment) is rather complex, involving
-knowledge of several libraries:
+插件是动态链接的共享对象。他们可以提供C和胶水
+C ++库。 API（目前）是相当复杂的，涉及
+几个图书馆的知识：
 
  - V8 JavaScript, a C++ library. Used for interfacing with JavaScript:
    creating objects, calling functions, etc.  Documented mostly in the

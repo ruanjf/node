@@ -6,9 +6,9 @@ title: documentation
 
 <!-- type=misc -->
 
-The goal of this documentation is to comprehensively explain the Node.js
-API, both from a reference as well as a conceptual point of view.  Each
-section describes a built-in module or high-level concept.
+本文档的目的是为了全面地解释整个Node.js
+API，无论是从一个参考，以及作为一个概念性的角度来看。每
+本节描述了一个内置的模块或高层次的概念。
 
 Where appropriate, property types, method arguments, and the arguments
 provided to event handlers are detailed in a list underneath the topic
