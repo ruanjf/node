@@ -1,7 +1,3 @@
----
-title: crypto
----
-
 # Crypto
 
     Stability: 2 - Unstable; API changes are being discussed for

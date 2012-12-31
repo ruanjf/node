@@ -1,7 +1,3 @@
----
-title: punycode
----
-
 # punycode
 
     Stability: 2 - Unstable

@@ -1,7 +1,3 @@
----
-title: buffer
----
-
 # Buffer
 
     Stability: 3 - Stable

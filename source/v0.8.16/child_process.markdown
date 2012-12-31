@@ -1,7 +1,3 @@
----
-title: child_process
----
-
 # Child Process
 
     Stability: 3 - Stable

@@ -1,7 +1,3 @@
----
-title: url
----
-
 # URL
 
     Stability: 3 - Stable

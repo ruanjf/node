@@ -1,7 +1,3 @@
----
-title: cluster
----
-
 # Cluster
 
     Stability: 1 - Experimental

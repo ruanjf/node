@@ -1,7 +1,3 @@
----
-title: dgram
----
-
 # UDP / Datagram Sockets
 
     Stability: 3 - Stable

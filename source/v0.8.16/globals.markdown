@@ -1,7 +1,3 @@
----
-title: globals
----
-
 # Global Objects
 
 <!-- type=misc -->

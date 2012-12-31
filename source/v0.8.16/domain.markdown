@@ -1,7 +1,3 @@
----
-title: domain
----
-
 # Domain
 
     Stability: 1 - Experimental

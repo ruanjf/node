@@ -1,7 +1,3 @@
----
-title: synopsis
----
-
 # Synopsis
 
 <!--type=misc-->

@@ -1,12 +1,8 @@
----
-title: addons
----
-
 # Addons
 
-插件是动态链接的共享对象。他们可以提供C和胶水
-C ++库。 API（目前）是相当复杂的，涉及
-几个图书馆的知识：
+Addons are dynamically linked shared objects. They can provide glue to C and
+C++ libraries. The API (at the moment) is rather complex, involving
+knowledge of several libraries:
 
  - V8 JavaScript, a C++ library. Used for interfacing with JavaScript:
    creating objects, calling functions, etc.  Documented mostly in the
@@ -23,8 +19,9 @@ C ++库。 API（目前）是相当复杂的，涉及
 
  - Others. Look in `deps/` for what else is available.
 
-节点静态编译到可执行文件中的所有的依赖。何时
-编译模块时，您不必担心任何有关链接库。
+Node statically compiles all its dependencies into the executable. When
+compiling your module, you don't need to worry about linking to any of these
+libraries.
 
 
 ## Hello world

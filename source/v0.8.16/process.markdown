@@ -1,7 +1,3 @@
----
-title: process
----
-
 # process
 
 <!-- type=global -->

@@ -1,7 +1,3 @@
----
-title: querystring
----
-
 # Query String
 
     Stability: 3 - Stable

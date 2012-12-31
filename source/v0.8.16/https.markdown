@@ -1,7 +1,3 @@
----
-title: https
----
-
 # HTTPS
 
     Stability: 3 - Stable

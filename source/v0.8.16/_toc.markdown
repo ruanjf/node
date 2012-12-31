@@ -1,7 +1,3 @@
----
-title: _toc
----
-
 * [About these Docs](documentation.html)
 * [Synopsis](synopsis.html)
 * [Assertion Testing](assert.html)

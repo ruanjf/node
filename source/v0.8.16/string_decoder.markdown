@@ -1,7 +1,3 @@
----
-title: string_decoder
----
-
 # StringDecoder
 
     Stability: 3 - Stable
