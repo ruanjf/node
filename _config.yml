@@ -1,5 +1,0 @@
-safe: true
-source: source/v0.8.16
-destination: v0.8.16/
-lsi: false
-pygments: true
