@@ -11,4 +11,4 @@
 `node .\generate.js --format=html --template=../source/template.html --out=../v0.8.16 ../source/v0.8.16/all.markdown`
 
 ## 说明 ##
-由于本人能力不高，欢迎各位同学一起更正错误。
+由于本人菜鸟一个，欢迎各位同学一起更正错误。
