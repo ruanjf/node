@@ -31,6 +31,7 @@ var args = process.argv.slice(2);
 var format = 'json';
 var template = null;
 var inputFile = null;
+var outputFolder = null;
 
 args.forEach(function (arg) {
   if (!arg.match(/^\-\-/)) {
@@ -39,64 +40,68 @@ args.forEach(function (arg) {
     format = arg.replace(/^\-\-format=/, '');
   } else if (arg.match(/^\-\-template=/)) {
     template = arg.replace(/^\-\-template=/, '');
+  } else if (arg.match(/^\-\-out=/)) {
+    outputFolder = arg.replace(/^\-\-out=/, '');
   }
 })
 
 
 if (!inputFile) {
   throw new Error('No input file specified');
+} else {
+  inputFile = path.resolve(inputFile);
 }
 
+if (!outputFolder) {
+  throw new Error('No output folder specified');
+} else {
+  outputFolder = path.resolve(outputFolder);
+}
 
-console.error('Input file = %s', inputFile);
+fs.exists(outputFolder, function (exists) {
+  if (!exists) {
+	fs.mkdir(outputFolder);
+  }
+});
+
+console.error('Input  = %s', inputFile);
+console.error('Output = %s', outputFolder);
+
 fs.readFile(inputFile, 'utf8', function(er, input) {
   if (er) throw er;
   // process the input for @include lines
-  processIncludes(input, next);
+  processIncludes(path.basename(inputFile), input, next);
 });
-
 
 var includeExpr = /^@include\s+([A-Za-z0-9-_]+)(?:\.)?([a-zA-Z]*)$/gmi;
 var includeData = {};
-function processIncludes(input, cb) {
+function processIncludes(name, input, cb) {
   var includes = input.match(includeExpr);
-  if (includes === null) return cb(null, input);
-  var errState = null;
-  console.error(includes);
+  if (includes === null) return cb(null, input, name);
   var incCount = includes.length;
-  if (incCount === 0) cb(null, input);
+  if (incCount === 0) cb(null, input, name);
+
+  var out = input;
   includes.forEach(function(include) {
     var fname = include.replace(/^@include\s+/, '');
     if (!fname.match(/\.markdown$/)) fname += '.markdown';
 
-    if (includeData.hasOwnProperty(fname)) {
-      input = input.split(include).join(includeData[fname]);
-      incCount--;
-      if (incCount === 0) {
-        return cb(null, input);
-      }
-    }
-
     var fullFname = path.resolve(path.dirname(inputFile), fname);
-    fs.readFile(fullFname, 'utf8', function(er, inc) {
-      if (errState) return;
-      if (er) return cb(errState = er);
-      processIncludes(inc, function(er, inc) {
-        if (errState) return;
-        if (er) return cb(errState = er);
-        incCount--;
-        includeData[fname] = inc;
-        input = input.split(include+'\n').join(includeData[fname]+'\n');
-        if (incCount === 0) {
-          return cb(null, input);
-        }
-      });
+    
+    var inc = fs.readFileSync(fullFname, 'utf8');
+    processIncludes(fname, inc, function(er, inc) {
+        if (er) return cb(er);
+	out = out.replace(include, inc);
+        return cb(null, inc, fname);
     });
   });
+
+  return cb(null, out, name);
+
 }
 
 
-function next(er, input) {
+function next(er, input, fname) {
   if (er) throw er;
   switch (format) {
     case 'json':
@@ -109,7 +114,13 @@ function next(er, input) {
     case 'html':
       require('./html.js')(input, inputFile, template, function(er, html) {
         if (er) throw er;
-        console.log(html);
+	var fullOutFname = path.resolve(outputFolder, fname.replace(/\.markdown$/, '.html'));
+	if (fname.indexOf('_') != 0) {
+		fs.writeFile(fullOutFname, html, function (err) {
+	  		if (err) throw err;
+	  		console.log(fullOutFname);
+		});
+	}
       });
       break;
 
@@ -117,3 +128,4 @@ function next(er, input) {
       throw new Error('Invalid format: ' + format);
   }
 }
+

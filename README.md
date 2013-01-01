@@ -3,3 +3,9 @@
 
 ## 更新日志 ##
 - 2012-12-30,
+
+
+## 生成文档 ##
+`cd node`
+`cd node-doc-generator`
+`node .\generate.js --format=html --template=../source/template.html --out=../v0.8.16 ../source/v0.8.16/all.markdown`
